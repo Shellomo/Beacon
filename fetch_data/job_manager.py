@@ -88,9 +88,6 @@ def _process_job_output(config: Dict) -> int:
         else:
             raise ValueError(f"Unsupported output format: {output_format}")
 
-        logger.info(f"✅ Data import completed:")
-        logger.info(f"   Records processed: {records_processed}")
-
         return records_processed
 
     except Exception as e:
@@ -220,7 +217,7 @@ class JobManager:
             if result:
                 execution.records_processed = result
             
-            logger.info(f"✅ Job '{job_id}' completed successfully")
+            logger.info(f" ✅ Job '{job_id}' completed successfully")
             logger.info(f"   Duration: {execution.duration_seconds}s")
             logger.info(f"   Records processed: {execution.records_processed}")
             
@@ -260,11 +257,7 @@ def main():
         manager.load_job_configs()
         
         if args.command == 'run':
-            execution = manager.run_job(args.job, force=args.force)
-            if execution:
-                print(f"✅ Job completed: {execution.status}")
-                print(f"Duration: {execution.duration_seconds}s")
-                print(f"Records processed: {execution.records_processed}")
+            manager.run_job(args.job, force=args.force)
 
         elif args.command == 'list':
             print("-" * 80)
