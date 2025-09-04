@@ -1,0 +1,19 @@
+{
+  "job_id": "gitleaks_rules_scraper",
+  "name": "Gitleaks Security Rules Scraper",
+  "description": "Scrapes Gitleaks security rules from GitHub configuration and updates the gitleaks_rules table",
+  "enabled": true,
+  "source": {
+    "type": "script",
+    "script_path": "main.py",
+    "working_directory": "jobs/gitleaks",
+    "timeout_seconds": 3600,
+    "retry_attempts": 2,
+    "retry_delay_seconds": 180
+  },
+  "output": {
+    "format": "csv",
+    "directory": "output",
+    "filename": "gitleaks_rules.csv"
+  }
+}
