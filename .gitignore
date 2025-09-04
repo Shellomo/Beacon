@@ -1,0 +1,14 @@
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Jobs output
+fetch_data/jobs/*/results/*
+fetch_data/jobs/*/output/*
