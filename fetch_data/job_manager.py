@@ -1,21 +1,3 @@
-#!/usr/bin/env python3
-"""
-Content Feeds Job Manager
-
-A comprehensive data pipeline management system that:
-- Loads job configurations from JSON files
-- Executes data scraping/fetching jobs
-- Tracks statistics and performance metrics
-- Monitors data quality and sends alerts
-- Provides scheduling and retry capabilities
-
-Usage:
-    python job_manager.py run --job chrome_extensions_scraper
-    python job_manager.py schedule --daemon
-    python job_manager.py stats --job chrome_extensions_scraper --days 7
-    python job_manager.py list
-"""
-
 import argparse
 import sys
 import subprocess
@@ -27,11 +9,7 @@ from dataclasses import dataclass
 import json
 from pathlib import Path
 import pandas as pd
-from dotenv import load_dotenv
-# from import_data import ContentFeedsImporter
 
-# Load environment variables
-load_dotenv()
 
 # Setup logging
 logging.basicConfig(
@@ -135,6 +113,7 @@ def _run_script_job(config: Dict) -> int:
 
     # Execute script
     try:
+        # ToDo: pass the config as argument
         result = subprocess.run(
             cmd,
             cwd=working_dir,
@@ -292,7 +271,9 @@ def main():
             for job in manager.jobs_config:
                 job_config = manager.jobs_config[job]
                 status = " ✅" if job_config['enabled'] else "⏸️"
-                print(f"{status} {job_config['job_id']} - {job_config['name']}")
+                print(f"{job_config['name']}: {status}")
+                print(f"\tJob ID: {job_config['job_id']}")
+                print(f"\tOutput file: {job_config['source']['working_directory']}/{job_config['output']['directory']}/{job_config['output']['filename']}")
                 print()
         
     except Exception as e:
