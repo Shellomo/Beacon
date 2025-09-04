@@ -111,17 +111,31 @@ def _run_script_job(config: Dict) -> int:
     # Execute script
     try:
         # ToDo: pass the config as argument
-        result = subprocess.run(
+        process = subprocess.Popen(
             cmd,
             cwd=working_dir,
-            timeout=timeout,
-            capture_output=True,
-            text=True
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True
         )
-        logger.info(f'Job Logs:\n{"="*30}\n{result.stdout}{"="*30}')
+        
+        # Stream output in real-time
+        logger.info(f'Job Logs:\n{"="*30}')
+        while True:
+            output = process.stdout.readline()
+            if output == '' and process.poll() is not None:
+                break
+            if output:
+                logger.info(output.strip())
+        
+        # Wait for process to complete and get return code
+        return_code = process.poll()
+        logger.info(f'{"="*30}')
 
-        if result.returncode != 0:
-            raise Exception(f"Script failed with code {result.returncode}: {result.stderr}")
+        if return_code != 0:
+            raise Exception(f"Script failed with code {return_code}")
 
         # Process output and update database
         return _process_job_output(config)
