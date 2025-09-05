@@ -161,6 +161,7 @@ class JobManager:
             logger.warning(f"⚠️ Jobs directory {self.jobs_dir} does not exist")
             return configs
         config_files = [file for folder in self.jobs_dir.iterdir() for file in folder.iterdir() if file.name.endswith("job_config.json")]
+
         for config_file in config_files:
             try:
                 with open(config_file, 'r') as f:
@@ -179,9 +180,12 @@ class JobManager:
                 
             except Exception as e:
                 logger.error(f"❌ Failed to load config {config_file}: {e}")
-        
+
+        # sort by job_id
+        configs = dict(sorted(configs.items()))
         self.jobs_config = configs
         logger.info(f"📋 Loaded {len(configs)} job configurations")
+
         return configs
 
     def run_job(self, job_id: str, force: bool = False) -> JobExecution | None:
