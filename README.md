@@ -1,6 +1,6 @@
-# 🚨 Beacon - Security & Threat Intelligence Feeds
+# Beacon - Security & Threat Intelligence Feeds
 
-**The ultimate open-source platform for cybersecurity data feeds** 🛡️
+**The ultimate open-source platform for cybersecurity data feeds**
 
 Get structured, real-time data feeds for threat intelligence, security monitoring, and digital asset tracking. Perfect for security teams, researchers, and developers building cybersecurity tools.
 
@@ -23,7 +23,7 @@ ls jobs/chrome_extensions/results/
 
 **That's it!** 🎉 Your cybersecurity feed data is now available as structured CSV files.
 
-## 📊 Available Feeds
+## Available Feeds
 
 | Feed | Description | Output Format | Records |
 |------|-------------|---------------|---------|
@@ -33,48 +33,48 @@ ls jobs/chrome_extensions/results/
 
 > **Coming Soon**: 100+ additional feeds including npm packages, WordPress plugins, DLP patterns, IP reputation, and more!
 
-## 🎯 Use Cases
+## Use Cases
 
-- **🔍 Threat Intelligence**: Monitor malicious extensions, suspicious packages, and security threats
-- **📋 Compliance**: Track software inventory, permissions, and security posture  
-- **🛡️ Security Research**: Analyze trends, patterns, and behaviors in digital ecosystems
-- **⚙️ Security Tooling**: Build custom security tools with structured data feeds
-- **📈 Market Analysis**: Research software popularity, adoption trends, and competitor analysis
+- **Threat Intelligence**: Monitor malicious extensions, suspicious packages, and security threats
+- **Compliance**: Track software inventory, permissions, and security posture  
+- **Security Research**: Analyze trends, patterns, and behaviors in digital ecosystems
+- **Security Tooling**: Build custom security tools with structured data feeds
+- **Market Analysis**: Research software popularity, adoption trends, and competitor analysis
 
-## 🔧 Features
+## Features
 
-✅ **Zero Configuration** - Works out of the box  
-✅ **Structured Data** - Clean CSV/JSON output  
-✅ **Extensible** - Easy to add new feeds  
-✅ **Performance Monitoring** - Built-in execution tracking  
-✅ **Error Handling** - Retry logic and robust error recovery  
-✅ **Open Source** - MIT License, contribute freely  
+- **Zero Configuration** - Works out of the box  
+- **Structured Data** - Clean CSV/JSON output  
+- **Extensible** - Easy to add new feeds  
+- **Performance Monitoring** - Built-in execution tracking  
+- **Error Handling** - Retry logic and robust error recovery  
+- **Open Source** - MIT License, contribute freely  
 
 ## 🗺️ Roadmap
 
-### 🚧 Coming Soon
-- **🌐 Web UI Dashboard** - Beautiful interface for browsing and downloading feeds
-- **📡 API Service** - RESTful API for programmatic access
-- **🔄 Real-time Updates** - Live feed updates and webhooks
-- **📦 Docker Support** - One-click deployment with Docker
+### Coming Soon
+- **Web UI Dashboard** - Beautiful interface for browsing and downloading feeds
+- **API Service** - RESTful API for programmatic access
+- **Real-time Updates** - Live feed updates and webhooks
+- **Docker Support** - One-click deployment with Docker
 
-### 🎯 100+ Planned Feeds
+### 100+ Planned Feeds
 
-**📦 Packages & Plugins**
+**Packages & Plugins**
 - npm packages, PyPI packages, Maven, NuGet
 - WordPress plugins, JetBrains plugins  
 - Homebrew, Chocolatey, APT packages
 
-**📱 Mobile & Desktop Apps**
+**Mobile & Desktop Apps**
 - App Store apps, Google Play apps
 - Process names, user agents, JA3 fingerprints
 
-**🛡️ Security & DLP**
+**Security & DLP**
 - Secret detection patterns, PII regexes
 - File type signatures, malware IOCs
 - VPN/proxy IP ranges, threat feeds
 
-**☁️ Cloud & Infrastructure**  
+**Cloud & Infrastructure**  
 - AWS/Azure/GCP IP ranges
 - CDN endpoints, DNS resolvers
 - Certificate transparency logs
@@ -95,27 +95,27 @@ ls jobs/chrome_extensions/results/
 **Wanted feeds**: Check our [issues](https://github.com/Shellomo/Beacon/issues) for feed requests and bounties! 💰
 
 ### Ways to Contribute
-- 🆕 **Add new feeds** - The more data sources, the better!
-- 🐛 **Fix bugs** - Help improve existing feeds
-- 📚 **Documentation** - Improve guides and examples  
-- 🌟 **Ideas** - Suggest new feed types and use cases
+- **Add new feeds** - The more data sources, the better!
+- **Fix bugs** - Help improve existing feeds
+- **Documentation** - Improve guides and examples  
+- **Ideas** - Suggest new feed types and use cases
 
-## 📚 Documentation
+## Documentation
 
 - **[Jobs System](jobs/README.md)** - How to add new feeds
 
-## 🆘 Support
+## Support
 
-- **💬 Discussions**: [GitHub Discussions](https://github.com/Shellomo/Beacon/discussions)
-- **🐛 Bug Reports**: [GitHub Issues](https://github.com/Shellomo/Beacon/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Shellomo/Beacon/discussions)
+- **Bug Reports**: [GitHub Issues](https://github.com/Shellomo/Beacon/issues)
 
-## ⚖️ License
+## License
 
 MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-**⭐ Star this repo if you find it useful!** Help us build the largest open cybersecurity feed platform.
+⭐ **Star this repo if you find it useful!** Help us build the largest open cybersecurity feed platform.
 
 **Keywords**: cybersecurity feeds, threat intelligence, security data, chrome extensions, security research, malware detection, digital forensics, compliance monitoring, security tools, open source security
 
