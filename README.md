@@ -4,10 +4,6 @@
 
 Get structured, real-time data feeds for threat intelligence, security monitoring, and digital asset tracking. Perfect for security teams, researchers, and developers building cybersecurity tools.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Feeds Available](https://img.shields.io/badge/feeds-3+-green.svg)](#available-feeds)
-
 ## 🚀 Quick Start (60 seconds)
 
 ```bash
