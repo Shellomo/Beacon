@@ -23,7 +23,7 @@ output_config = job_config['output']
 working_dir = Path(source_config['working_directory'])
 output_dir = Path(output_config['directory'])
 output_filename = Path(output_config['filename'])
-output_file_path = working_dir/ output_dir / output_filename
+output_file_path = output_dir / output_filename
 os.makedirs(output_dir, exist_ok=True)
 
 
