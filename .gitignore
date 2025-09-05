@@ -8,7 +8,8 @@ logs/
 
 # OS
 .DS_Store
+__pycache__/
+
 
 # Jobs output
 fetch_data/jobs/*/results/*
-fetch_data/jobs/*/output/*
