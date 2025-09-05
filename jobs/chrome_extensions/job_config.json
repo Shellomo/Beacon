@@ -3,12 +3,6 @@
   "name": "Chrome Web Store Extensions Scraper",
   "description": "Scrapes Chrome Web Store for extension metadata and updates the chrome_extensions table",
   "enabled": true,
-  "schedule": {
-    "type": "cron",
-    "expression": "0 2 * * *",
-    "timezone": "UTC",
-    "description": "Daily at 2:00 AM UTC"
-  },
   "source": {
     "type": "script",
     "script_path": "scraper.py",
@@ -20,70 +14,6 @@
   "output": {
     "format": "csv",
     "directory": "results",
-    "filename": "chrome_extensions.csv",
-    "cleanup_after_success": false,
-    "max_file_age_hours": 24
-  },
-  "database": {
-    "target_table": "chrome_extensions",
-    "feed_id": "chrome_extensions",
-    "primary_key": "extension_id",
-    "upsert_strategy": "merge",
-    "batch_size": 1000,
-    "max_records_per_run": 500000,
-    "data_validation": {
-      "required_fields": ["extension_id", "name"],
-      "unique_fields": ["extension_id"],
-      "field_types": {
-        "extension_id": "string",
-        "name": "string",
-        "users": "integer",
-        "rating": "float",
-        "permissions": "array"
-      }
-    }
-  },
-  "monitoring": {
-    "alerts": {
-      "on_failure": true,
-      "on_zero_records": true,
-      "on_duration_exceed_minutes": 120,
-      "on_error_rate_percent": 10
-    },
-    "metrics": {
-      "track_execution_time": true,
-      "track_memory_usage": true,
-      "track_records_processed": true,
-      "track_success_rate": true,
-      "compare_with_previous_runs": 5
-    },
-    "notifications": {
-      "email": ["admin@contentfeeds.com"],
-      "webhook": null,
-      "slack": null
-    }
-  },
-  "data_quality": {
-    "freshness_check": {
-      "enabled": true,
-      "max_age_hours": 48
-    },
-    "completeness_check": {
-      "enabled": true,
-      "expected_min_records": 150000,
-      "expected_growth_rate_percent": 2
-    },
-    "consistency_check": {
-      "enabled": true,
-      "duplicate_detection": true,
-      "field_validation": true
-    }
-  },
-  "metadata": {
-    "owner": "data-engineering",
-    "created_date": "2025-09-03",
-    "version": "1.0",
-    "dependencies": ["chrome_web_store_api"],
-    "tags": ["chrome", "extensions", "marketplace", "daily"]
+    "filename": "chrome_extensions.csv"
   }
 }
