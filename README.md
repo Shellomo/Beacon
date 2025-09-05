@@ -79,7 +79,7 @@ ls jobs/chrome_extensions/results/
 - CDN endpoints, DNS resolvers
 - Certificate transparency logs
 
-[See full list →](example_feeds.txt)
+[See full roadmap →](FEEDS_ROADMAP.md)
 
 ## 🤝 Contributing
 
