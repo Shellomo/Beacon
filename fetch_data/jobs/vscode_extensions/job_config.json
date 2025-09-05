@@ -1,0 +1,19 @@
+{
+  "job_id": "vscode_extensions_scraper",
+  "name": "VSCode Marketplace Extensions Scraper",
+  "description": "Scrapes VSCode Marketplace for extension metadata and updates the vscode_extensions table",
+  "enabled": true,
+  "source": {
+    "type": "script",
+    "script_path": "main.py",
+    "working_directory": "jobs/vscode_extensions",
+    "timeout_seconds": 7200,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 300
+  },
+  "output": {
+    "format": "csv",
+    "directory": "output",
+    "filename": "vscode_extensions.csv"
+  }
+}
