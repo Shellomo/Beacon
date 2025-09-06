@@ -160,7 +160,7 @@ class JobManager:
         if not self.jobs_dir.exists():
             logger.warning(f"⚠️ Jobs directory {self.jobs_dir} does not exist")
             return configs
-        config_files = [file for folder in self.jobs_dir.iterdir() for file in folder.iterdir() if file.name.endswith("job_config.json")]
+        config_files = [file for folder in self.jobs_dir.iterdir() if folder.is_dir() for file in folder.iterdir() if file.name.endswith("job_config.json")]
 
         for config_file in config_files:
             try:
