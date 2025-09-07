@@ -31,6 +31,54 @@ ls jobs/chrome_extensions/results/
 | **Gitleaks Rules** | Security rules for secret detection | CSV | 200+    |
 | **VSCode Extensions** | VS Code Marketplace extension data | CSV | 100K+   |
 
+<details>
+<summary><b>📋 View Output Fields</b></summary>
+
+#### Chrome Extensions Feed
+- `id`: Unique Chrome extension ID
+- `name`: Extension name/identifier  
+- `display_name`: Human-readable extension name
+- `short_description`: Brief description of the extension
+- `category`: Extension category classification
+- `icon_link`: URL to extension icon image
+- `downloads`: Number of downloads/installs
+- `rating`: Average user rating (decimal)
+- `rating_count`: Total number of ratings
+- `website`: Extension developer website
+- `good_record`: Boolean indicating good standing status
+- `featured`: Boolean indicating if extension is featured
+- `create_date`: Extension creation/publication date
+- `version`: Current extension version
+- `host_wide_permissions`: Boolean indicating if extension has host-wide permissions
+
+#### VSCode Extensions Feed  
+- `publisherId`: Unique publisher identifier
+- `publisherName`: Publisher account name
+- `publisherDisplayName`: Human-readable publisher name
+- `extensionId`: Unique extension identifier
+- `extensionName`: Extension package name
+- `extensionDisplayName`: Human-readable extension name
+- `lastUpdated`: Date of last extension update
+- `publishedDate`: Initial publication date
+- `install`: Number of installations
+- `averagerating`: Average user rating (decimal)
+- `ratingcount`: Total number of ratings
+- `trendingdaily`: Daily trending score
+- `trendingmonthly`: Monthly trending score
+- `downloadCount`: Total download count
+- `categories`: Array of extension categories
+- `tags`: Array of extension tags
+- `pricing`: Pricing information (Free/Paid)
+- `hasIcon`: Boolean indicating if extension has an icon
+
+#### Gitleaks Rules Feed
+- `rule_id`: Unique identifier for the security rule
+- `name`: Name of the security rule/pattern
+- `description`: Detailed description of what the rule detects
+- `regex`: Regular expression pattern used for detection
+
+</details>
+
 > **Coming Soon**: 100+ additional feeds including npm packages, WordPress plugins, DLP patterns, IP reputation, and more!
 
 ## Use Cases
