@@ -154,10 +154,12 @@ class ChromeWebStoreScraper:
                 # Convert to ChromeExtension objects
                 page_extensions = []
                 for item in raw_extensions:
-                    if len(item) > 0:  # Each item is [extension_data]
-                        extension = self.parser.parse_extension_data(item[0])
-                        if extension:
-                            page_extensions.append(extension)
+                    extension = self.parser.parse_extension_data(item[0])
+                    if extension:
+                        page_extensions.append(extension)
+                    # else:
+                    #     logger.info(f"Skipped invalid extension data: {json.dumps(item, indent=2)}")
+                    #     break
                 
                 all_extensions.extend(page_extensions)
                 logger.info(f"Page {page_count}: Added {len(page_extensions)} extensions (total: {len(all_extensions)})")

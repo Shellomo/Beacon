@@ -84,7 +84,8 @@ class ChromeStoreParser:
             ChromeExtension object or None if parsing fails
         """
         try:
-            if not item or len(item) < 20:
+            if not item:
+                logger.info("No extension data found")
                 return None
 
             # Parse manifest JSON if available
@@ -97,7 +98,7 @@ class ChromeStoreParser:
                     manifest = {}
             version = manifest.get('version', 'Unknown')
             host_wide_permissions = False
-            if 'permissions' in manifest and isinstance(manifest['host_permissions'], list):
+            if 'permissions' in manifest and 'host_permissions' in manifest and isinstance(manifest['host_permissions'], list):
                 host_wide_permissions = any(perm in ["http://*/*", "https://*/*"] for perm in manifest['host_permissions'])
 
             # Parse creation date from timestamp
@@ -152,10 +153,11 @@ class ChromeStoreParser:
 
             # Basic validation
             if not extension.id or not extension.name:
+                logger.info(f"Failed to parse extension {item[0]}")
                 return None
-
+            # logger.info(f"Parsed extension: {extension.id} - {extension.name}")
             return extension
 
         except Exception as e:
-            logger.debug(f"Error parsing extension data: {e}")
+            logger.info(f"Error parsing extension data: {e}")
             return None
