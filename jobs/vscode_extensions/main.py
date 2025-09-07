@@ -22,7 +22,7 @@ try:
     crawler = MarketplaceCrawler()
 
     # Start crawling (default: max_pages=1000)
-    total_extensions = crawler.crawl(max_pages=2)
+    total_extensions = crawler.crawl(max_pages=1000)
     
     # Initialize the processor
     processor = ExtensionDataProcessor()
