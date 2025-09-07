@@ -1,0 +1,2 @@
+feeds/ filter=lfs diff=lfs merge=lfs -text
+feeds/** filter=lfs diff=lfs merge=lfs -text
