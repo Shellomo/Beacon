@@ -14,6 +14,26 @@
   "output": {
     "format": "csv",
     "directory": "../../feeds",
-    "filename": "vscode_extensions.csv"
+    "filename": "vscode_extensions.csv",
+    "fields": {
+      "publisherId": "Unique publisher identifier",
+      "publisherName": "Publisher account name",
+      "publisherDisplayName": "Human-readable publisher name",
+      "extensionId": "Unique extension identifier",
+      "extensionName": "Extension package name",
+      "extensionDisplayName": "Human-readable extension name",
+      "lastUpdated": "Date of last extension update",
+      "publishedDate": "Initial publication date",
+      "install": "Number of installations",
+      "averagerating": "Average user rating (decimal)",
+      "ratingcount": "Total number of ratings",
+      "trendingdaily": "Daily trending score",
+      "trendingmonthly": "Monthly trending score",
+      "downloadCount": "Total download count",
+      "categories": "Array of extension categories",
+      "tags": "Array of extension tags",
+      "pricing": "Pricing information (Free/Paid)",
+      "hasIcon": "Boolean indicating if extension has an icon"
+    }
   }
 }

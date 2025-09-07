@@ -14,6 +14,12 @@
   "output": {
     "format": "csv",
     "directory": "../../feeds",
-    "filename": "gitleaks_rules.csv"
+    "filename": "gitleaks_rules.csv",
+    "fields": {
+      "rule_id": "Unique identifier for the security rule",
+      "name": "Name of the security rule/pattern",
+      "description": "Detailed description of what the rule detects",
+      "regex": "Regular expression pattern used for detection"
+    }
   }
 }

@@ -14,6 +14,23 @@
   "output": {
     "format": "csv",
     "directory": "../../feeds",
-    "filename": "chrome_extensions.csv"
+    "filename": "chrome_extensions.csv",
+    "fields": {
+      "id": "Unique Chrome extension ID",
+      "name": "Extension name/identifier",
+      "display_name": "Human-readable extension name",
+      "short_description": "Brief description of the extension",
+      "category": "Extension category classification",
+      "icon_link": "URL to extension icon image",
+      "downloads": "Number of downloads/installs",
+      "rating": "Average user rating (decimal)",
+      "rating_count": "Total number of ratings",
+      "website": "Extension developer website",
+      "good_record": "Boolean indicating good standing status",
+      "featured": "Boolean indicating if extension is featured",
+      "create_date": "Extension creation/publication date",
+      "version": "Current extension version",
+      "host_wide_permissions": "Boolean indicating if extension has host-wide permissions"
+    }
   }
 }
