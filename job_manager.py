@@ -262,7 +262,8 @@ def main():
     run_parser.add_argument('--force', action='store_true', help='Force run even if disabled')
 
     # List command
-    subparsers.add_parser('list', help='List all jobs')
+    list_parser = subparsers.add_parser('list', help='List all jobs')
+    list_parser.add_argument('--fields', action='store_true', help='Show output field details')
 
     args = parser.parse_args()
     
@@ -284,7 +285,15 @@ def main():
                 status = " ✅" if job_config['enabled'] else "⏸️"
                 print(f"{job_config['name']}: {status}")
                 print(f"\tJob ID: {job_config['job_id']}")
-                print(f"\tOutput file: {job_config['source']['working_directory']}/{job_config['output']['directory']}/{job_config['output']['filename']}")
+                print(f"\tOutput file: {job_config['output']['filename']}")
+                
+                # Display output fields if available and requested
+                if args.fields and 'fields' in job_config.get('output', {}):
+                    print(f"\tOutput fields:")
+                    fields = job_config['output']['fields']
+                    for field_name, description in fields.items():
+                        print(f"\t  • {field_name}: {description}")
+                
                 print()
         
     except Exception as e:
