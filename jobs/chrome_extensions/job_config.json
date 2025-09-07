@@ -13,7 +13,7 @@
   },
   "output": {
     "format": "csv",
-    "directory": "results",
+    "directory": "../../feeds",
     "filename": "chrome_extensions.csv"
   }
 }

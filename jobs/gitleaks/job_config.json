@@ -13,7 +13,7 @@
   },
   "output": {
     "format": "csv",
-    "directory": "output",
+    "directory": "../../feeds",
     "filename": "gitleaks_rules.csv"
   }
 }
